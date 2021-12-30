@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
 :root{
     --bright-orange: hsl(31, 77%, 52%);
     --dark-cyan: hsl(184, 100%, 22%);
     --very-dark-cyan: hsl(179, 100%, 13%);
     --transparent-white: hsla(0, 0%, 100%, 0.75);
     --light-gray: hsl(0, 0%, 95%);
+    --font-primary: 'Lexend Deca', sans-serif;
+    --font-title: 'Big Shoulders Display', cursive;
 }
 *{ box-sizing: border-box; }
 
 html, body{
+    min-height: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
 body{
-    font-family: sans-serif;
+    font-family: var(--font-primary);
     display: grid;
     place-items: center;
     background-color: var(--light-gray);
@@ -24,17 +29,26 @@ body{
     max-width: 1040px;
     min-width: 320px;
     display: flex;
+    justify-content: center;
     /* flex-wrap: wrap; */
+    /* border-radius: 8px; */
+    /* overflow: hidden; */
 }
 
 /* Column */
 .column{
     min-width: auto;
     max-width: 330px;
+    width: 26%;
+    min-height: 512px;
     color: var(--transparent-white);
-    padding: 2rem;
+    padding: 3rem;
+    transition: 0.5s all ease-in-out;
+    position: relative;
 }
-
+.column:hover{
+    width: 35%;
+}
 .sedans{
     background-color: var(--bright-orange);
 }
@@ -45,4 +59,62 @@ body{
 
 .luxury{
     background-color: var(--very-dark-cyan);
+}
+
+.title{
+    font-family: var(--font-title);
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--light-gray);
+}
+
+.desc{
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 7rem;
+}
+
+.enlace{
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--light-gray);
+    padding: 0.9rem 2rem;
+    border-radius: 32px;
+    border: 2px solid transparent;
+    transition: 0.3s all;
+    position: absolute;
+    bottom: 3rem;
+}
+.column .enlace:hover{
+    border: 2px solid var(--light-gray);
+    background: transparent;
+    color: var(--light-gray);
+}
+.sedans .enlace{
+    color: var(--bright-orange);
+}
+.suvs .enlace{
+    color: var(--dark-cyan);
+}
+.luxury .enlace{
+    color: var(--very-dark-cyan);
+}
+
+@media screen and (max-width: 768px ) {
+    html, body{
+        height: auto;
+    }
+    .principal{
+        flex-direction: column;
+        margin: 5rem auto;
+    }
+    .column{
+        width: 320px;
+        height: auto;
+        transition: 0.5s all ease-in-out;
+    }
+    .column:hover{
+        width: auto;
+    }
 }
