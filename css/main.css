@@ -1,0 +1,48 @@
+:root{
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --light-gray: hsl(0, 0%, 95%);
+}
+*{ box-sizing: border-box; }
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+    display: grid;
+    place-items: center;
+    background-color: var(--light-gray);
+}
+
+/* Pincipal */
+.principal {
+    max-width: 1040px;
+    min-width: 320px;
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+/* Column */
+.column{
+    min-width: auto;
+    max-width: 330px;
+    color: var(--transparent-white);
+    padding: 2rem;
+}
+
+.sedans{
+    background-color: var(--bright-orange);
+}
+
+.suvs{
+    background-color: var(--dark-cyan);
+}
+
+.luxury{
+    background-color: var(--very-dark-cyan);
+}
