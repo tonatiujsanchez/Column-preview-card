@@ -45,10 +45,21 @@ body{
     padding: 3rem;
     transition: 0.5s all ease-in-out;
     position: relative;
+    cursor: pointer;
 }
-.column:hover{
-    width: 35%;
+
+.column.active{
+    width: 40%;
 }
+
+.column:first-of-type{
+    border-radius: 8px 0 0 8px;
+}
+
+.column:last-of-type{
+    border-radius:0 8px 8px 0;
+}
+
 .sedans{
     background-color: var(--bright-orange);
 }
@@ -86,17 +97,21 @@ body{
     position: absolute;
     bottom: 3rem;
 }
+
 .column .enlace:hover{
     border: 2px solid var(--light-gray);
     background: transparent;
     color: var(--light-gray);
 }
+
 .sedans .enlace{
     color: var(--bright-orange);
 }
+
 .suvs .enlace{
     color: var(--dark-cyan);
 }
+
 .luxury .enlace{
     color: var(--very-dark-cyan);
 }
@@ -109,12 +124,20 @@ body{
         flex-direction: column;
         margin: 5rem auto;
     }
+
     .column{
         width: 320px;
         height: auto;
         transition: 0.5s all ease-in-out;
     }
-    .column:hover{
-        width: auto;
+    .column.active{
+        width: 320px;
+    }
+    .column:first-of-type{
+        border-radius: 8px 8px 0 0;
+    }
+
+    .column:last-of-type{
+        border-radius:0 0 8px 8px;
     }
 }
